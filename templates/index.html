@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Extractor</title>
+    <!-- Link to our CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Email Extractor</h1>
+            <p>Paste your text below to extract email addresses</p>
+        </header>
+
+        <div class="main-content">
+            <!-- Input box for text -->
+            <div class="input-section">
+                <h2>Input Text</h2>
+                <textarea id="textInput" placeholder="Paste your text here..."></textarea>
+                <button id="extractButton">Extract Emails</button>
+            </div>
+
+            <!-- Results section (hidden until we have results) -->
+            <div class="results-section" id="resultsSection" style="display: none;">
+                <h2>Extracted Emails</h2>
+                <p id="emailCount">0 emails found</p>
+                
+                <!-- List of extracted emails -->
+                <div class="email-list" id="emailList"></div>
+                
+                <!-- Buttons for copying and downloading -->
+                <div class="action-buttons">
+                    <button id="copyButton">Copy All</button>
+                    <button id="downloadButton">Download as Text</button>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>This tool processes your text locally - your data is not stored or shared.</p>
+        </footer>
+    </div>
+
+    <!-- Link to our JavaScript file -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
